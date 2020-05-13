@@ -6,10 +6,11 @@ import scipy.ndimage as nd
 try:
     import interpolation
 except ImportError as error:
-    # Attempt autocompilation.
-    import pyximport
-    pyximport.install()
-    import _interpolation as interpolation
+    print('Interpolation not found.')
+    raise ImportError
+    # import pyximport
+    # pyximport.install()
+    # import _interpolation as interpolation
 
 
 def nearest(image, warp):
