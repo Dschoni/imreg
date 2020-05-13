@@ -4,7 +4,7 @@ import numpy as np
 import scipy.ndimage as nd
 
 try:
-    import interpolation
+    import .interpolation
 except ImportError as error:
     print('Interpolation not found.')
     raise ImportError
