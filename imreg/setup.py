@@ -1,39 +1,11 @@
-# import os
 
-
-# def configuration(parent_package='', top_path=None):
-#     from numpy.distutils.misc_util import Configuration
-#     config = Configuration('imreg', parent_package, top_path)
-#     return config
-
-# if __name__ == "__main__":
-#     from numpy.distutils.core import setup
-
-#     config = configuration(top_path='').todict()
-#     setup(**config)
-    
-
-# from setuptools import Extension, setup
-
-
-
-#     # Everything but primes.pyx is included here.
-#     Extension("*", ["*.pyx"],
-#         include_dirs=[...],
-#         libraries=[...],
-#         library_dirs=[...]),
-# ]
-# setup(
-#     name="My hello app",
-#     ext_modules=cythonize(extensions),
-# )
 
 from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 import numpy
 
 extensions = [
-    Extension("interpolation", ["_interpolation.pyx"], include_dirs=[numpy.get_include()])]
+    Extension("interpolation", ["_interpolation.pyx"], include_dirs=[numpy.get_include()]), '.']
 
 setup(name='imreg',
       version='0.1.1',
@@ -45,5 +17,5 @@ setup(name='imreg',
       packages=find_packages(),
 # 	  package_data={'':['*.dll']},
       ext_modules=cythonize(extensions),
-      include_dirs=[numpy.get_include()],
+      include_dirs=[numpy.get_include(),'.'],
       zip_safe=False)
