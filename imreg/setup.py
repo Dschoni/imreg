@@ -32,7 +32,7 @@ from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 
 extensions = [
-    Extension("interpolation", ["primes.pyx"])]
+    Extension("_interpolation", ["_interpolation.pyx"])]
 
 setup(name='imreg',
       version='0.1.1',
